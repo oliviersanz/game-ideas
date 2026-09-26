@@ -25,6 +25,8 @@ Platformer 16-bit — **map monde façon Mario World / SNES** (genre only, pas d
 
 Fichier source : [`app-kingdom.html`](./app-kingdom.html)
 
+Équipe bots recommandée (post-EA) : [§07 dans la fiche](https://oliviersanz.github.io/game-ideas/app-kingdom.html#equipe).
+
 ---
 
 ## Noms parlants (pastiche)

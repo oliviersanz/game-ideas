@@ -47,7 +47,7 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 
 <header class="hero">
 <div class="tags">
-<span class="tag on">Fiche v9 · map monde SMW</span>
+<span class="tag on">Fiche v10 · map monde SMW</span>
 <span class="tag">Map monde façon Mario World / SNES</span>
 <span class="tag ok">Héros : Leo ou Lina</span>
 <span class="tag">5 mondes · 1 boss / monde</span>
@@ -72,7 +72,7 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 
 <nav><strong>Sommaire</strong><div class="l">
 <a href="#hero">1. Héros</a><a href="#structure">2. Structure</a><a href="#stages">3. Mondes</a><a href="#bosses">3b. Combats boss</a><a href="#legal">4. Légal</a>
-<a href="#feas">5. Faisabilité</a><a href="#verdict">6. Verdict</a>
+<a href="#feas">5. Faisabilité</a><a href="#verdict">6. Verdict</a><a href="#equipe">7. Équipe bots</a>
 </div></nav>
 
 <section id="hero">
@@ -285,5 +285,74 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 <div class="call g">Univers unique : un ado au choix, hub map SMW-like, 5 îles/apps avec méca signature + boss. Feeling campagne = progression d’île en île, pas un level select plat.</div>
 </section>
 
-<footer>Fiche v9 · Desktop/App-Kingdom-fiche.html · structure map monde SMW-like · rename Swindr → Tender · Leo/Lina · continuité pixel</footer>
+
+<section id="equipe">
+<h2><span class="n">07</span> Équipe de bots recommandée</h2>
+<p>Post-<strong>ElementalAscent</strong> (iOS d’abord). Roster inspiré du setup EA (Boss / Cindy / Bob / Kevin), adapté à <em>App Kingdom</em> : Unity multiplateforme, map SMW-like, pastiches d’apps, assets IA. Noms réutilisables ou clones — l’important, c’est le contrat de rôle + les handoffs.</p>
+
+<div class="call w"><strong>Activation :</strong> EA iOS prioritaire. Cette équipe s’active vraiment après EA (ou en parallèle léger sur la fiche seulement — pas de code Unity AK tant qu’EA n’est pas sorti).</div>
+
+<table>
+<thead><tr><th>Rôle</th><th>Nom (EA-like)</th><th>Responsabilités</th><th>Handoff</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>Tech Lead</strong></td>
+<td>Boss</td>
+<td>Tranche scope (map / mondes), architecture Unity, workflow agents, priorités. <em>Pas de code feature au quotidien.</em></td>
+<td>Valide les fiches Designer → ouvre le batch Builder ; arbitre Reviewer.</td>
+</tr>
+<tr>
+<td><strong>Game Designer</strong></td>
+<td>Cindy (ou clone)</td>
+<td>Design doc vivant : mondes-apps, stages, mobs, boss, mécaniques signature, balance. Issues GitHub labels <code>idea</code> / <code>ready</code>.</td>
+<td>Sheets validées → Tech Lead ; specs claires pour Art + Builder.</td>
+</tr>
+<tr>
+<td><strong>Narrative / Scenario</strong></td>
+<td>Bot dédié ou mode Cindy</td>
+<td>Lore léger hub map, intros de monde, dialogues boss pastiche (ton satire). <strong>Jamais</strong> noms réels de marques / créateurs. Strings FR/EN si besoin.</td>
+<td>Textes lock → Designer / Builder (UI strings).</td>
+</tr>
+<tr>
+<td><strong>Art / Assets</strong></td>
+<td>Art bot</td>
+<td>Bible pixel 16-bit, sprites Lina/Leo, tilesets par monde, HUD, boss. Pipeline IA (Scenario / Meshy…) + lock style. <strong>Ne code pas.</strong> Olivier ne dessine pas — ce bot + bible = source de vérité visuelle.</td>
+<td>Assets livrés / nommés → Builder intègre.</td>
+</tr>
+<tr>
+<td><strong>Audio</strong> <em>(opt. phase 2)</em></td>
+<td>Audio bot</td>
+<td>SFX + thèmes courts par monde (Suno / browser), orchestré. Non bloquant v1.</td>
+<td>Fichiers audio → Builder après freeze méca.</td>
+</tr>
+<tr>
+<td><strong>Builder / Dev</strong></td>
+<td>Bob-like Unity</td>
+<td>Implémente fiches validées : map, stages, mobs, boss. PRs <strong>ready-for-review</strong> (pas draft) ; <strong>un PR par batch cohérent</strong>.</td>
+<td>PR → Reviewer ; corrections dans le même batch.</td>
+</tr>
+<tr>
+<td><strong>Reviewer</strong></td>
+<td>Kevin-like</td>
+<td>Audit code Unity / C#, perf mobile, esprit zero-warnings. Demande corrections au Builder (pas de merge sauvage).</td>
+<td>Approve → merge (Tech Lead / process).</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Flux de travail</h3>
+<ol>
+<li><strong>Designer</strong> (+ Narrative) rédige / update la fiche stage ou boss.</li>
+<li><strong>Tech Lead</strong> valide scope + priorité du batch.</li>
+<li><strong>Art</strong> livre sprites / tiles / HUD lockés bible.</li>
+<li><strong>Builder</strong> ouvre un PR ready-for-review (batch cohérent, pas draft).</li>
+<li><strong>Reviewer</strong> audite → corrections Builder → merge.</li>
+<li><strong>Olivier</strong> playtest (humain) — softlock, hits unfair, tells lisibles. Pas de bot QA.</li>
+<li>Optionnel : update fiche / GitHub Pages.</li>
+</ol>
+
+<div class="call g"><strong>Règles :</strong> pastiche only (Taktik, Instaglam, Fakebook, YouToob, Tender) · single PR batches pour limiter les conflits · ready-for-review, pas draft · Art ne code pas · Tech Lead ne code pas de feature au quotidien.</div>
+</section>
+
+<footer>Fiche v10 · Desktop/App-Kingdom-fiche.html · structure map monde SMW-like · rename Swindr → Tender · Leo/Lina · continuité pixel</footer>
 </div></body></html>
