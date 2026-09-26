@@ -47,7 +47,7 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 
 <header class="hero">
 <div class="tags">
-<span class="tag on">Fiche v12 · map monde SMW</span>
+<span class="tag on">Fiche v13 · map monde SMW</span>
 <span class="tag">Map monde façon Mario World / SNES</span>
 <span class="tag ok">Héros : Leo ou Lina</span>
 <span class="tag">5 mondes · 1 boss / monde</span>
@@ -367,6 +367,28 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 <li>Cursor + bots créés (voir rôles ci-dessous + §07).</li>
 </ul>
 
+<h3>IA tierces recommandées (hors Cursor)</h3>
+<p>Outils externes recommandés pour les pipelines d’assets ; ils restent séparés de Cursor et de l’intégration Unity.</p>
+
+<h4>Graphisme 2D (prioritaire pour ce jeu pixel)</h4>
+<ul>
+<li><strong>Scenario</strong> (ou équivalent avec entraînement de style personnalisé) — entraîner et verrouiller la bible de style 16-bit App Kingdom : sprites personnages, tiles, mobs et UI. C’est la voie principale.</li>
+<li><strong>Midjourney / Flux / ChatGPT images</strong> — moodboards et exploration de key art uniquement, <strong>pas</strong> de sprites de production (pixel trop incohérent).</li>
+<li><strong>Éviter Runway</strong> comme fabrique de sprites : meilleur pour du key art cinématique que pour des sheets prêtes pour le jeu.</li>
+</ul>
+
+<h4>3D</h4>
+<p>Pas nécessaire pour la v1 App Kingdom (jeu 2D). <strong>Meshy / Tripo</strong> restent optionnels et hors scope, uniquement pour d’éventuelles expérimentations ultérieures.</p>
+
+<h4>Audio</h4>
+<ul>
+<li><strong>Suno</strong> (ou Udio) — thèmes courts par monde et jingles de boss ; pas de connecteur natif Grok → navigateur : export manuel, puis import dans Unity.</li>
+<li><strong>ElevenLabs</strong> (ou équivalent) — VO stub optionnelle, non prioritaire.</li>
+<li><strong>SFX</strong> — mix d’outils SFX IA (ex. ElevenLabs SFX ou équivalent) et de bibliothèques gratuites (Kenney, etc.) pour les placeholders.</li>
+</ul>
+
+<div class="call"><strong>Note pipeline :</strong> le bot Art possède le verrouillage de style Scenario et les dossiers d’export ; la phase Audio 2 possède les exports Suno ; le Builder importe seulement dans Unity (PPU / filtre Point). Aucun asset Nintendo.</div>
+
 <h3>1. Tech Lead (Boss)</h3>
 <ul>
 <li>Trancher version Unity LTS + packages (2D, Input System, Cinemachine ; Addressables optionnel plus tard).</li>
@@ -442,5 +464,5 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 
 
 
-<footer>Fiche v12 · Desktop/App-Kingdom-fiche.html · structure map monde SMW-like · rename Swindr → Tender · Leo/Lina · continuité pixel · bootstrap Unity</footer>
+<footer>Fiche v13 · Desktop/App-Kingdom-fiche.html · structure map monde SMW-like · rename Swindr → Tender · Leo/Lina · continuité pixel · bootstrap Unity</footer>
 </div></body></html>
