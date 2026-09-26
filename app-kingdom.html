@@ -47,7 +47,7 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 
 <header class="hero">
 <div class="tags">
-<span class="tag on">Fiche v10 · map monde SMW</span>
+<span class="tag on">Fiche v11 · map monde SMW</span>
 <span class="tag">Map monde façon Mario World / SNES</span>
 <span class="tag ok">Héros : Leo ou Lina</span>
 <span class="tag">5 mondes · 1 boss / monde</span>
@@ -72,7 +72,7 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 
 <nav><strong>Sommaire</strong><div class="l">
 <a href="#hero">1. Héros</a><a href="#structure">2. Structure</a><a href="#stages">3. Mondes</a><a href="#bosses">3b. Combats boss</a><a href="#legal">4. Légal</a>
-<a href="#feas">5. Faisabilité</a><a href="#verdict">6. Verdict</a><a href="#equipe">7. Équipe bots</a>
+<a href="#feas">5. Faisabilité</a><a href="#verdict">6. Verdict</a><a href="#equipe">7. Équipe bots</a><a href="#setup">8. Mise en place</a>
 </div></nav>
 
 <section id="hero">
@@ -354,5 +354,95 @@ footer{margin-top:24px;text-align:center;color:var(--m);font-size:13px}
 <div class="call g"><strong>Règles :</strong> pastiche only (Taktik, Instaglam, Fakebook, YouToob, Tender) · single PR batches pour limiter les conflits · ready-for-review, pas draft · Art ne code pas · Tech Lead ne code pas de feature au quotidien.</div>
 </section>
 
-<footer>Fiche v10 · Desktop/App-Kingdom-fiche.html · structure map monde SMW-like · rename Swindr → Tender · Leo/Lina · continuité pixel</footer>
+<section id="setup">
+<h2><span class="n">08</span> Mise en place initiale</h2>
+<p>Ce qu’il faut brancher <strong>avant</strong> de produire les stages. Bootstrap kickoff — pas encore la production lourde des 5 mondes. Rappel : <strong>ElementalAscent d’abord</strong> ; ce bootstrap peut être préparé maintenant, production Unity App Kingdom après EA.</p>
+
+<div class="call g"><strong>Moteur tranché :</strong> <strong>Unity 2D LTS</strong> (licence Personal OK). Side-scroller SMW-like + world map = chemin résolu (Tilemap, Cinemachine, Input System, 2D Physics). Un codebase multiplat (iOS / Android / Steam plus tard). Gros asset store + options CI. <em>Godot 4</em> = alternative plus légère / zéro friction licence si Olivier veut un install minimal — mais la reco par défaut reste <strong>Unity 2D LTS</strong>. <strong>Pas Unreal</strong> pour ce jeu 2D pixel.</div>
+
+<h3>0. Prérequis humains (Olivier)</h3>
+<ul>
+<li>Compte Unity + Unity Hub ; licence <strong>Personal</strong>.</li>
+<li>Installer <strong>Unity 2D LTS</strong> — pinner la version exacte dans le repo (<code>ProjectSettings/ProjectVersion.txt</code>).</li>
+<li>Repo GitHub dédié (privé ok) + labels <code>idea</code> / <code>ready</code> / <code>wont</code> (comme EA).</li>
+<li>Cursor + bots créés (voir rôles ci-dessous + §07).</li>
+<li>Priorité EA : bootstrap AK préparable ; pas de production lourde stages tant qu’EA n’est pas sorti.</li>
+</ul>
+
+<h3>1. Tech Lead (Boss)</h3>
+<ul>
+<li>Trancher version Unity LTS + packages (2D, Input System, Cinemachine ; Addressables optionnel plus tard).</li>
+<li>Scaffold repo : <code>Assets/_Project/{Art,Audio,Scenes,Scripts,Prefabs,Settings}</code>, <code>AGENTS.md</code>, lien docs/bible.</li>
+<li>Conventions PR : ready-for-review, single batch PR ; CI smoke (Unity batchmode compile) si faisable plus tard.</li>
+<li>Créer / configurer les bots Cursor avec prompts de rôle + liens vers cette fiche Pages.</li>
+</ul>
+
+<h3>2. Game Designer (Cindy)</h3>
+<ul>
+<li>Design bible courte : map hub, 5 mondes, grille stages (intro / skill / ★ / boss), méca signature.</li>
+<li>Issues GitHub par monde / stage (templates).</li>
+<li>Pas d’assets finis — specs jouables seulement.</li>
+</ul>
+
+<h3>3. Narrative</h3>
+<ul>
+<li>Tone guide pastiche (noms Tender / Taktik… — <strong>jamais</strong> marques réelles).</li>
+<li>Strings stub : noms de stages, one-liners d’intimidation boss.</li>
+</ul>
+
+<h3>4. Art / Assets</h3>
+<ul>
+<li>Visual bible 16-bit (palette, outline, proportions Lina/Leo) — <strong>lock style BEFORE</strong> mass gen.</li>
+<li>Pipeline IA : outil choisi (ex. Scenario pour train style 2D / équivalent) + dossiers export <code>Art/Sprites/{Hero,Enemies,Tiles/WorldName,UI,Bosses}</code>.</li>
+<li>Naming + import Unity (PPU, filter Point, compression).</li>
+<li>Livrer d’abord (vertical slice) : hero idle/run/jump, 1 tileset monde pilote (Taktik), 1 mob, HUD hearts.</li>
+</ul>
+
+<h3>5. Audio (phase 2 / stub)</h3>
+<ul>
+<li>Dossier SFX placeholder ; brancher Suno / browser plus tard — <strong>non bloquant</strong> pour le bootstrap.</li>
+</ul>
+
+<h3>6. Builder (Bob-like Unity)</h3>
+<ul>
+<li>Ouvrir projet Unity version pinnée ; scènes <code>Boot</code>, <code>MapHub</code>, <code>Stage_Prototype</code>.</li>
+<li>Controllers : player move/jump, camera, basic hurt ; nodes world map vides pour les 5 îles.</li>
+<li>Respecter le pipeline d’import des dossiers Art ; ScriptableObjects pour metadata stages si utile.</li>
+<li>Première PR : vertical slice jouable (1 stage Taktik + stub boss arena) — ready for review.</li>
+</ul>
+
+<h3>7. Reviewer (Kevin-like)</h3>
+<ul>
+<li>Checklist Unity : esprit warnings-as-errors, pas de grosses textures non compressées, Input System only, scènes dans Build Settings.</li>
+<li>Review de la première PR slice <strong>avant</strong> d’ouvrir les 5 mondes.</li>
+</ul>
+
+<h3>8. Relier les outils</h3>
+<ol>
+<li><strong>Fiche Pages</strong> (source de vérité design) → <strong>GitHub Issues</strong></li>
+<li>Designer / Narrative specs → Art génère → drop dans <code>Art/</code></li>
+<li>Builder intègre Unity → PR GitHub → Reviewer</li>
+<li><strong>Olivier playtest</strong> (pas de bot QA)</li>
+</ol>
+<p>Cursor agents : chacun a le lien <a href="https://oliviersanz.github.io/game-ideas/app-kingdom.html">https://oliviersanz.github.io/game-ideas/app-kingdom.html</a> + <code>AGENTS.md</code>.</p>
+<div class="call w"><strong>Phase 2 optionnelle :</strong> CI GitHub Actions Unity (licence coûteuse) — à noter, pas bloquant bootstrap.</div>
+
+<h3>Ordre recommandé J0–J7</h3>
+<ol>
+<li><strong>J0</strong> — Hub Unity + install LTS pinnée</li>
+<li><strong>J1</strong> — Repo scaffold + labels + AGENTS.md</li>
+<li><strong>J2</strong> — Bots Cursor prompts + lien fiche</li>
+<li><strong>J3</strong> — Bible art lockée</li>
+<li><strong>J4</strong> — Assets slice (hero + tileset Taktik + mob + HUD)</li>
+<li><strong>J5</strong> — Builder vertical slice</li>
+<li><strong>J6</strong> — Reviewer checklist</li>
+<li><strong>J7</strong> — Olivier joue la slice</li>
+</ol>
+
+<div class="call g"><strong>Pas de bot QA.</strong> Roster §07 inchangé ; ce §08 = checklist bootstrap avant production stages.</div>
+</section>
+
+
+
+<footer>Fiche v11 · Desktop/App-Kingdom-fiche.html · structure map monde SMW-like · rename Swindr → Tender · Leo/Lina · continuité pixel · bootstrap Unity</footer>
 </div></body></html>
