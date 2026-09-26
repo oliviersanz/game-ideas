@@ -4,20 +4,7 @@ Fiches HTML de concepts de jeux. Lecture sur téléphone ou ordi via GitHub Page
 
 **Accueil :** [oliviersanz.github.io/game-ideas](https://oliviersanz.github.io/game-ideas/)
 
-## Idées
-
-| Idée | Lien |
-| --- | --- |
-| **Do Not Disturb** | [ouvrir la fiche](https://oliviersanz.github.io/game-ideas/do-not-disturb.html) |
-| **App Kingdom** | [ouvrir la fiche](https://oliviersanz.github.io/game-ideas/app-kingdom.html) |
-
----
-
-### [Do Not Disturb](https://oliviersanz.github.io/game-ideas/do-not-disturb.html)
-
-Puzzle / énigmes courts (≈ 1–3 min) sur mobile et tablette. Le hub est le **Mode silence** avec Luna : chaque niveau pastiche une app sociale sous un nom inventé (Taktik, Instaglam, Fakebook, YouToob, Tender). Premium unique (~3–4 €), pas d’IAP. Ce n’est ni du WarioWare ni un Mario-like — des énigmes de réflexion calées sur l’archétype de chaque app.
-
-Fichier source : [`do-not-disturb.html`](./do-not-disturb.html)
+## Idée
 
 ### [App Kingdom](https://oliviersanz.github.io/game-ideas/app-kingdom.html)
 
@@ -41,4 +28,4 @@ Fichier source : [`app-kingdom.html`](./app-kingdom.html)
 
 Marques et noms réels exclus des builds store ; pastiche + disclaimer fictif.
 
-Ces idées sont parkées ici pour itérer plus tard.
+Cette idée est parkée ici pour itérer plus tard.
