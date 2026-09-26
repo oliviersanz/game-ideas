@@ -1,6 +1,6 @@
 # game-ideas
 
-Fiches HTML de concepts de jeux (post-[ElementalAscent](https://github.com/oliviersanz/ElementalAscent)). Lecture sur téléphone ou ordi via GitHub Pages.
+Fiches HTML de concepts de jeux. Lecture sur téléphone ou ordi via GitHub Pages.
 
 **Accueil :** [oliviersanz.github.io/game-ideas](https://oliviersanz.github.io/game-ideas/)
 
@@ -25,7 +25,7 @@ Platformer 16-bit — **map monde façon Mario World / SNES** (genre only, pas d
 
 Fichier source : [`app-kingdom.html`](./app-kingdom.html)
 
-Équipe bots recommandée (post-EA) : [§07 dans la fiche](https://oliviersanz.github.io/game-ideas/app-kingdom.html#equipe).
+Équipe bots recommandée : [§07 dans la fiche](https://oliviersanz.github.io/game-ideas/app-kingdom.html#equipe).
 
 ---
 
@@ -41,4 +41,4 @@ Fichier source : [`app-kingdom.html`](./app-kingdom.html)
 
 Marques et noms réels exclus des builds store ; pastiche + disclaimer fictif.
 
-ElementalAscent (iOS) reste la priorité de ship ; ces idées sont parkées ici pour itérer plus tard.
+Ces idées sont parkées ici pour itérer plus tard.
