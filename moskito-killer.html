@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Moskito Killer</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0b0f14;
+      color: #e8eef5;
+      line-height: 1.5;
+      padding:
+        max(1.25rem, env(safe-area-inset-top))
+        max(1.1rem, env(safe-area-inset-right))
+        max(2.5rem, env(safe-area-inset-bottom))
+        max(1.1rem, env(safe-area-inset-left));
+    }
+    main { max-width: 40rem; margin: 0 auto; }
+    a { color: #9ec1ff; }
+    .back {
+      margin: 0 0 1rem;
+      font-size: 0.9rem;
+    }
+    .back a { color: #9aa8b8; text-decoration: none; }
+    .back a:hover { color: #e8eef5; }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.45rem;
+    }
+    .pitch {
+      margin: 0 0 1.25rem;
+      color: #c5d0dc;
+      font-size: 1.05rem;
+    }
+    section {
+      background: #151c26;
+      border: 1px solid #243041;
+      border-radius: 14px;
+      padding: 1rem 1.05rem 0.35rem;
+      margin: 0 0 0.85rem;
+    }
+    h2 {
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #9aa8b8;
+      margin: 0 0 0.65rem;
+    }
+    p { margin: 0 0 0.85rem; }
+    ul { margin: 0 0 0.85rem; padding-left: 1.15rem; }
+    li { margin: 0 0 0.55rem; }
+    li strong { font-weight: 650; }
+    figure { margin: 0 0 0.95rem; }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background: #0b0f14;
+    }
+    figcaption {
+      margin-top: 0.4rem;
+      color: #9aa8b8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="back"><a href="index.html">Fiches</a></p>
+    <h1>Moskito Killer</h1>
+    <p class="pitch">Unity 2D side-scroller, été, maison + jardin. Tu es chez toi, il fait chaud, les moustiques attaquent. Le score, c’est le nombre de moustiques tués. Une piqûre ne fait pas que perdre une vie : le moustique pond, et d’autres spawnent. Si tu te fais piquer, la pièce se remplit.</p>
+
+    <section>
+      <h2>Maquettes</h2>
+      <figure>
+        <img src="images/moskito-living-room.jpg" alt="Salon, le perso claque un moustique à mains nues" width="1280" height="720" />
+        <figcaption>Salon, mains nues</figcaption>
+      </figure>
+      <figure>
+        <img src="images/moskito-bedroom.jpg" alt="Chambre, le perso frappe avec un journal roulé" width="1280" height="720" />
+        <figcaption>Chambre, journal roulé</figcaption>
+      </figure>
+      <figure>
+        <img src="images/moskito-garden.jpg" alt="Jardin, le perso frappe avec une raquette électrique" width="1280" height="720" />
+        <figcaption>Jardin, raquette électrique</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Scope v1</h2>
+      <p>Intérieur (salon, chambre) + jardin. Pas de ville, pas de boutique. Un perso original (pas Mario). Look 16-bit lumineux, plateformes sur meubles / rebord de fenêtre / muret.</p>
+    </section>
+
+    <section>
+      <h2>Armes par niveau</h2>
+      <p>Kill milestones, pas un shop. Gameplay différent à chaque palier.</p>
+      <ul>
+        <li><strong>Mains nues</strong> — claque courte, très rapide, une cible. Grosse fenêtre où un moustique peut se poser pendant la récupération.</li>
+        <li><strong>Journal roulé</strong> — arc large, recul, étourdit (étoiles). Peut toucher 2–3 moustiques. Récupération plus lente.</li>
+        <li><strong>Tapette</strong> — allonge plate, cadence rapide, one-shot les petits. Moins de recul que le journal. Demande de viser.</li>
+        <li><strong>Raquette électrique</strong> — zone grille devant soi, étincelle. Peut chaîner les moustiques proches. Une jauge de charge empêche de la garder allumée.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Règles</h2>
+      <ul>
+        <li><strong>Piqûre</strong> = −1 cœur + un sac d’œufs au sol. Les œufs éclosent après quelques secondes, sauf si tu les écrases (interaction à part de l’arme).</li>
+        <li><strong>Fenêtre ouverte</strong> = spawn plus rapide. Le ventilateur du salon pousse les moustiques (environnement).</li>
+        <li><strong>Combo</strong> tant que tu n’es pas piqué.</li>
+        <li><strong>Fin de session v1</strong> : le jardin au crépuscule. Option d’un gros moustique « reine » comme cap, pas obligatoire pour la boucle score.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Hors v1</h2>
+      <ul>
+        <li>Autres pièces de la maison, après le salon et la chambre.</li>
+        <li>Spray, en plus des quatre paliers d’armes.</li>
+        <li>Bougie.</li>
+        <li>Moustiquaire défensive sur une fenêtre.</li>
+        <li>Voisinage, au-delà du jardin.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -14,6 +14,8 @@ Fichier source : [`app-kingdom.html`](./app-kingdom.html)
 
 Équipe bots recommandée : [§07 dans la fiche](https://oliviersanz.github.io/game-ideas/app-kingdom.html#equipe).
 
+[Moskito Killer](https://oliviersanz.github.io/game-ideas/moskito-killer.html) — tuer les moustiques, maison et jardin ([`moskito-killer.html`](./moskito-killer.html)).
+
 ---
 
 ## Noms parlants (pastiche)
